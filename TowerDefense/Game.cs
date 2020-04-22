@@ -23,11 +23,6 @@ namespace TowerDefense
                         new MapLocation(7, 2, map),
                     }
                 );
-                MapLocation location = path.GetLocationAt(8);
-                if (location != null)
-                {
-                    Console.WriteLine(location.X + "," + location.Y);
-                }
             }
             catch(OutOfBoundsException ex)
             {
