@@ -4,7 +4,27 @@ using System.Text;
 
 namespace TowerDefense
 {
-    class Exceptions
+    class TowerDefenseException : System.Exception
     {
+        public TowerDefenseException()
+        {
+
+        }
+        public TowerDefenseException(string message) : base(message)
+        {
+
+        }
+    }
+
+    class OutOfBoundsException : TowerDefenseException
+    {
+        public OutOfBoundsException()
+        {
+
+        }
+        public OutOfBoundsException(string message) : base(message)
+        {
+
+        }
     }
 }
