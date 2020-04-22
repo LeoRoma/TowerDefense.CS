@@ -9,9 +9,10 @@ namespace TowerDefense
         static void Main(string[] args)
         {
             Map map = new Map(8, 5);
-            
-            int area = map.Width * map.Height;
-            Console.WriteLine(area);
+
+            Point point = new Point(4, 2);
+
+            Console.WriteLine(point.DistanceTo(5, 5));
         }
     }
 }
