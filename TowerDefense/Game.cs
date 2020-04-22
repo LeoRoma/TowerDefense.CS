@@ -9,10 +9,15 @@ namespace TowerDefense
         static void Main(string[] args)
         {
             Map map = new Map(8, 5);
+            try
+            {
+                MapLocation mapLocation = new MapLocation(20, 20, map);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            Point point = new Point(4, 2);
-
-            Console.WriteLine(point.DistanceTo(5, 5));
         }
     }
 }
