@@ -10,20 +10,20 @@ namespace TowerDefense
         protected virtual int Power { get; } = 1;
         protected virtual double Accuracy { get; } = .75;
 
-        private static readonly Random _random = new Random();
+        protected static readonly Random _random = new Random();
 
-        private readonly MapLocation _location;
+        protected readonly MapLocation _location;
 
         public Tower(MapLocation location)
         {
             _location = location;
         }
 
-        public bool IsSuccessfulShot()
+        protected virtual bool IsSuccessfulShot()
         {
             return _random.NextDouble() < Accuracy;
         }
-        public void FireOnInvaders(Invader[] invaders)
+        public virtual void FireOnInvaders(Invader[] invaders)
         {
            foreach(Invader invader in invaders)
             {
@@ -35,7 +35,7 @@ namespace TowerDefense
                         
                         if(invader.IsNeutralized)
                         {
-                            Console.WriteLine("Invader Neutralized!");
+                            Console.WriteLine("Neutralized an invader!");
                         }
                     }
                     else
