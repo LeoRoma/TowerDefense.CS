@@ -44,6 +44,6 @@ namespace TowerDefense
                 }
             }
             return true;
-         }
+        }
     }
 }
