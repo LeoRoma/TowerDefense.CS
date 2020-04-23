@@ -21,6 +21,7 @@ namespace TowerDefense
 
         public virtual bool IsSuccessfulShot()
         {
+            TowerCheker();
             return _random.NextDouble() < Accuracy;
         }
         public virtual void FireOnInvaders(Invader[] invaders)
@@ -33,6 +34,7 @@ namespace TowerDefense
                     {
                         invader.DecreaseHealth(Power);
                         
+                        
                         if(invader.IsNeutralized)
                         {
                             Console.WriteLine("Neutralized an invader!");
@@ -44,6 +46,22 @@ namespace TowerDefense
                     }
                     break;
                 }
+            }
+        }
+
+        private void TowerCheker()
+        {
+            if (_location.X == 3 && _location.Y == 3)
+            {
+                Console.WriteLine("Sniper Tower hitted a target");
+            }
+            else if(_location.X == 1 && _location.Y == 3)
+            {
+                Console.WriteLine("Normal Tower hitted a target");
+            }
+            else
+            {
+                Console.WriteLine("Powerful Tower hitted a target");
             }
         }
     }
