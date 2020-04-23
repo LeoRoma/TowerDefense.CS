@@ -6,8 +6,8 @@ namespace TowerDefense
 {
     class SniperTower : Tower
     {
-        protected override int Range { get; } = 2;
-        protected override double Accuracy { get; } = 1.0;
+        private static Random _random = new Random();
+        protected override double Accuracy { get; } = 0.95;
         public SniperTower(MapLocation location) : base(location)
         { }
     }

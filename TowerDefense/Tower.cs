@@ -19,7 +19,7 @@ namespace TowerDefense
             _location = location;
         }
 
-        protected virtual bool IsSuccessfulShot()
+        public virtual bool IsSuccessfulShot()
         {
             return _random.NextDouble() < Accuracy;
         }
