@@ -24,6 +24,13 @@ namespace TowerDefense
                     }
                 );
 
+                MapLocation location = new MapLocation(0, 2, map);
+
+                if(path.IsOnPath(location))
+                {
+                    Console.WriteLine(location + " is on path");
+                }
+
                 Invader[] invaders =
                 {
                     new ShieldedInvader(path),

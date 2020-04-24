@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TowerDefense
 {
@@ -21,21 +19,21 @@ namespace TowerDefense
 
         public virtual bool IsSuccessfulShot()
         {
-            TowerCheker();
+            //TowerCheker();
             return _random.NextDouble() < Accuracy;
         }
         public virtual void FireOnInvaders(Invader[] invaders)
         {
-           foreach(Invader invader in invaders)
+            foreach (Invader invader in invaders)
             {
-                if(invader.IsActive && _location.InRangeOf(invader.Location, Range))
+                if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
-                    if(IsSuccessfulShot())
+                    if (IsSuccessfulShot())
                     {
                         invader.DecreaseHealth(Power);
-                        
-                        
-                        if(invader.IsNeutralized)
+
+
+                        if (invader.IsNeutralized)
                         {
                             Console.WriteLine("Neutralized an invader at " + invader.Location + "!");
                         }
@@ -49,20 +47,20 @@ namespace TowerDefense
             }
         }
 
-        private void TowerCheker()
-        {
-            if (_location.X == 3 && _location.Y == 3)
-            {
-                Console.WriteLine("Sniper Tower hitted a target");
-            }
-            else if(_location.X == 1 && _location.Y == 3)
-            {
-                Console.WriteLine("Normal Tower hitted a target");
-            }
-            else
-            {
-                Console.WriteLine("Powerful Tower hitted a target");
-            }
-        }
+        //private void TowerCheker()
+        //{
+        //    if (_location.X == 3 && _location.Y == 3)
+        //    {
+        //        Console.WriteLine("Sniper Tower hitted a target");
+        //    }
+        //    else if (_location.X == 1 && _location.Y == 3)
+        //    {
+        //        Console.WriteLine("Normal Tower hitted a target");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Powerful Tower hitted a target");
+        //    }
+        //}
     }
 }
