@@ -8,8 +8,6 @@ namespace TowerDefense
         protected virtual int Power { get; } = 1;
         protected virtual double Accuracy { get; } = .75;
 
-        protected static readonly Random _random = new Random();
-
         protected readonly MapLocation _location;
 
         public Tower(MapLocation location)
@@ -20,7 +18,7 @@ namespace TowerDefense
         public virtual bool IsSuccessfulShot()
         {
             //TowerCheker();
-            return _random.NextDouble() < Accuracy;
+            return Random.NextDouble() < Accuracy;
         }
         public virtual void FireOnInvaders(IInvader[] invaders)
         {
