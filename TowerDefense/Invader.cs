@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TowerDefense
 {
-    class Invader
+    abstract class Invader
     {
         private readonly Path _path;
         private int _pathStep = 0;
