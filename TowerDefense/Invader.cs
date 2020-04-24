@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TowerDefense
 {
-    abstract class Invader
+    abstract class Invader : IInvader
     {
         private readonly Path _path;
         private int _pathStep = 0;
@@ -12,7 +12,7 @@ namespace TowerDefense
         protected virtual int StepSize { get; } = 1;
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
-        public abstract int Health { get; protected set; } 
+        public abstract int Health { get; protected set; }
 
         public bool HasScored { get { return _pathStep >= _path.Length; } }
 
