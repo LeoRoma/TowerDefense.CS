@@ -4,10 +4,17 @@ using System.Text;
 
 namespace TowerDefense
 {
-    interface IInvader
+    interface IMappable
     {
         MapLocation Location { get; }
+    }
 
+    interface IMovable
+    {
+        void Move();
+    }
+    interface IInvader : IMappable, IMovable
+    {
         int Health { get; }
 
         bool HasScored { get; }
@@ -15,8 +22,6 @@ namespace TowerDefense
         bool IsNeutralized { get; }
 
         bool IsActive { get; }
-
-        void Move();
 
         void DecreaseHealth(int factor);
     }
