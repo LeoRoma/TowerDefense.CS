@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TowerDefense
 {
-    class Path
+   public class Path
     {
         private readonly MapLocation[] _path;
 

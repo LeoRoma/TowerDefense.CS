@@ -66,5 +66,39 @@ namespace TowerDefense.Tests
         //{
         //    Assert.True(false, "This test needs an implementation");
         //}
+
+        [Fact]
+        public void DoesNotEqualNull()
+        {
+            var target = new Point(0, 0);
+            Assert.False(target.Equals(null));
+        }
+        [Fact]
+        public void DistinctObjectsAreEqual()
+        {
+            var target = new Point(4, 5);
+            Assert.False(target.Equals(new Point(4, 6)));
+        }
+
+        [Fact]
+        public void PointsAreNotEqual()
+        {
+            var target = new Point(4, 5);
+            Assert.False(target.Equals(new Point(4, 6)));
+        }
+
+        [Fact]
+        public void SimilarPointsHaveDifferentHashCode1()
+        {
+            var target = new Point(4, 5);
+            Assert.NotEqual(new Point(5, 4).GetHashCode(), target.GetHashCode());
+        }
+
+        [Fact]
+        public void SimilarPointsHaveDifferentHashCode2()
+        {
+            var target = new Point(4, 5);
+            Assert.NotEqual(new Point(4, 6).GetHashCode(), target.GetHashCode());
+        }
     }
 }
