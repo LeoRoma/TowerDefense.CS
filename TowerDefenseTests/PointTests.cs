@@ -39,7 +39,7 @@ namespace TowerDefense.Tests
         //}
 
         [Fact()]
-        public void DistanceToTest()
+        public void DistanceToWithPathagoreanTriple()
         {
             var point = new Point(3, 4);
             var target = new Point(0, 0);
@@ -50,6 +50,17 @@ namespace TowerDefense.Tests
             Assert.Equal(expected, actual, 2);
         }
 
+        [Fact()]
+        public void DistanceToPointAtSamePosition()
+        {
+            var point = new Point(3, 4);
+            var target = new Point(3, 4);
+
+            var expected = 0.0;
+
+            var actual = target.DistanceTo(point);
+            Assert.Equal(expected, actual, 2);
+        }
         //[Fact()]
         //public void DistanceToTest1()
         //{
